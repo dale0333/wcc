@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Counter;
+use App\Livewire\TestPage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,10 +13,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    Route::get('/test-page', function () {
-        return view('livewire.test-page');
-    })->name('test-page');
+    Route::get('/counter', Counter::class)->name('counter');
+
+    Route::get('/test-page', TestPage::class)->name('test-page');
 });
