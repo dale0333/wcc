@@ -20,6 +20,7 @@
                             id="title"
                             type="text"
                             wire:model="title"
+                            required
                             class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                         >
                         @error('title')
